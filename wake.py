@@ -1,7 +1,15 @@
 import wakeonlan
+from dotenv import load_dotenv
+import os
 
-mac = '90:b1:1c:68:a9:9d'
+# environment variables
+load_dotenv()
 
-wakeonlan.send_magic_packet(mac)
+# fetch mac
+mac = os.getenv("MAC_ADDRESS")
 
-print(f"Magic vibrations sent to {mac} to wake that mutha fucka up!")
+if mac:
+  wakeonlan.send_magic_packet(mac)
+  print(f"Magic vibrations sent to {mac} to wake that mutha fucka up!")
+else:
+  print("MAC_ADDRESS is a mystery to the .env")
