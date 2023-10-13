@@ -1,6 +1,6 @@
 import wakeonlan
 
-mac = '90:b1:1c:68:a9:9d'
+mac = 'your mac here'
 
 wakeonlan.send_magic_packet(mac)
 
