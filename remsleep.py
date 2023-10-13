@@ -5,13 +5,14 @@ import os
 # env variables
 load_dotenv()
 
-# fetch password
+# fetch variables
 password = os.getenv("PASSWORD")
+hostname = os.getenv("HOST")
+print(f"Hostname: {hostname}")
 
-hostname: "192.168.0.215"
 port = 22 # default port for SSH
 username = "andrew"
-password = "{password}"
+print(f"username: {username}")
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -19,6 +20,7 @@ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 try:
   # Connect to the remote
   ssh.connect(hostname, port, username, password)
+  print("SSH connection successful")
 
   # execute sleep
   stdin, stdout, stderr = ssh.exec_command("sudo shutdown now")
