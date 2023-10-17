@@ -22,8 +22,9 @@ try:
   ssh.connect(hostname, port, username, password)
   print("SSH connection successful")
 
-  # execute sleep
-  stdin, stdout, stderr = ssh.exec_command("sudo shutdown now")
+  # execute sleep wiht provided password
+  command = f"echo '{password}' | sudo -S shutdown now 2>/dev/null"
+  stdin, stdout, stderr = ssh.exec_command(command)
 
   # Display output
   print(stdout.read().decode())
