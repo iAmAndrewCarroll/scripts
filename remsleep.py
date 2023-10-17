@@ -23,7 +23,7 @@ try:
   print("SSH connection successful")
 
   # execute sleep wiht provided password
-  command = f"echo '{password}' | sudo -S shutdown now 2>/dev/null"
+  command = f"echo '{password}' | sudo -S shutdown now"
   stdin, stdout, stderr = ssh.exec_command(command)
 
   # Display output
@@ -41,4 +41,4 @@ except paramiko.AuthenticationException:
 except paramiko.SSHException as e:
   print(f"SSH connection failed: {str(e)}")
 except Exception as e:
-  print(f"An error occurred: {str(e)}")
+  pass # print(f"An error occurred: {str(e)}")
