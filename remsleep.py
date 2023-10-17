@@ -28,6 +28,9 @@ try:
   # Display output
   print(stdout.read().decode())
 
+  # Display errors, if any
+  print(stderr.read().decode())
+
   # terminate connection
   ssh.close()
 
