@@ -20,6 +20,7 @@ remsleep.py returns errors related to the paramiko library.  I have tried to mak
 
 zshrc:
 - `nano .zshrc`
+
 bashrc:
 - `nano .bashrc`
 
@@ -31,6 +32,5 @@ enter the following:
 **save the file by using the options shown (^O to "write out" and ^X to "Exit")**
 
 **restart the terminal**
-`source .bashrc`
-or
-`source .zshrc`
+- `source .bashrc`
+- `source .zshrc`
