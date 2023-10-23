@@ -7,7 +7,7 @@ load_dotenv()
 
 # fetch variables
 password = os.getenv("PASSWORD")
-hostname = os.getenv("HOST")
+hostname = os.getenv("CHONK_IP")
 print(f"Hostname: {hostname}")
 
 port = 22 # default port for SSH
